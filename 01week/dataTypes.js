@@ -32,6 +32,21 @@
 //   Use the parseInt() or the parseFloat() mehtods to convert the string value into a number.
 // Detects and prints what kind of datatype something is
 //   typeOf() method
+// Adds 2 numbers together
+//   variable: firstNum - prompt for first number
+//   variable: secondNum - prompt for second number
+//   document write sum of the two numbers
+// Runs only when 2 things are true
+//   variable: first thing
+//   variable: second thing
+//   function run if both first thing AND second thing are true
+//   else do not run
+// Runs when 1 of 2 things are true
+//   function run if first thing OR second thing is true
+//   else do not run
+// Runs when both things are false
+//   function run if both first thing AND second thing are false
+//   else do not run
 
 // CODE:
 

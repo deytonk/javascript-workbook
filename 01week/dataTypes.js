@@ -74,3 +74,28 @@ parseInt(string);
 // this does not work because no matter what you write in the prompt the computer reads it as a string
 var object = prompt("Write an examply of a datatype");
 document.write(typeof object);
+
+// homework
+
+// I did not even try prompt but I am assuming it wont work because it will return a string
+var firstNum = 25;
+var secondNum = 75;
+document.write(firstNum + secondNum);
+
+var thing1 = true;
+var thing2 = true;
+
+function willItRun {
+  if (thing1 = true && thing2 = true)
+  ; else
+};
+
+function howAboutNow {
+  if (thing1 = true || thing2 = true)
+  ; else
+};
+
+function lastOne {
+  if (thing1 = false || thing2 = false)
+  ; else 
+};

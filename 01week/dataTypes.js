@@ -30,7 +30,7 @@
 // Convert string to number:
 //   Make a variable called string and give it a string value.
 //   Use the parseInt() or the parseFloat() mehtods to convert the string value into a number.
-// Detects and prints what kind of datatype something is 
+// Detects and prints what kind of datatype something is
 //   typeOf() method
 
 // CODE:
@@ -49,3 +49,13 @@ weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
 document.write(weekday[d.getDay()] + " " + time);
+
+var number = 72468;
+number.toString();
+
+var string = "72468"
+parseInt(string);
+
+// this does not work because no matter what you write in the prompt the computer reads it as a string
+var object = prompt("Write an examply of a datatype");
+document.write(typeof object);

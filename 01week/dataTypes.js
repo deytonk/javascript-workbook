@@ -56,13 +56,13 @@ var weekday = new Array(6);
 // var time = d.getTime();
 var hour = today.getHours();
 var min = today.getMinutes();
-  if (min < 10){
-    min = "0" + min;
-  }
+if (min < 10) {
+  min = "0" + min;
+}
 var sec = today.getSeconds();
-  if (sec < 10){
-      sec = "0" + sec;
-  }
+if (sec < 10) {
+  sec = "0" + sec;
+}
 
 weekday[0] = "Sunday";
 weekday[1] = "Monday";
@@ -96,7 +96,8 @@ console.log("The sum of your two numbers is " + (firstNum + secondNum));
 // Renee wanted the program that adds two numbers in a function
 var a;
 var b;
-function add (a, b) {
+
+function add(a, b) {
   return a + b;
 }
 console.log(add(10, 5));
@@ -104,6 +105,7 @@ console.log(add(10, 5));
 var thing1;
 var thing2;
 
+// will run if both things are true
 function willItRun(thing1, thing2) {
   if (thing1 === true && thing2 === true) {
     return "Yes it will run!"
@@ -114,6 +116,7 @@ function willItRun(thing1, thing2) {
 
 console.log(willItRun(true, true));
 
+// will run if at least one thing is true
 function howAboutNow(thing1, thing2) {
   if (thing1 === true || thing2 === true) {
     return "Yes it will run!"
@@ -124,6 +127,7 @@ function howAboutNow(thing1, thing2) {
 
 console.log(howAboutNow(true, false));
 
+// will run if both things are false
 function lastOne(thing1, thing2) {
   if (thing1 === false && thing2 === false) {
     return "Yes it will run!"

@@ -51,9 +51,18 @@
 // CODE:
 
 // not sure why the first variable is necessary to get it to work?
-var d = new Date();
-var weekday = new Array(7);
-var time = d.getTime();
+var today = new Date();
+var weekday = new Array(6);
+// var time = d.getTime();
+var hour = today.getHours();
+var min = today.getMinutes();
+  if (min < 10){
+    min = "0" + min;
+  }
+var sec = today.getSeconds();
+  if (sec < 10){
+      sec = "0" + sec;
+  }
 
 weekday[0] = "Sunday";
 weekday[1] = "Monday";
@@ -63,39 +72,64 @@ weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
-document.write(weekday[d.getDay()] + " " + time);
+console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
 
 var number = 72468;
-number.toString();
+console.log(number.toString());
 
 var string = "72468"
-parseInt(string);
+console.log(parseInt(string));
 
-// this does not work because no matter what you write in the prompt the computer reads it as a string
-var object = prompt("Write an examply of a datatype");
-document.write(typeof object);
+// this does not work as a prompt because no matter what you write in the prompt the computer reads it as a string
+// var object = prompt("Write an example of a datatype");
+var object = "Write any kind of datatype in this variable";
+console.log(typeof object);
 
 // homework
 
 // I did not even try prompt but I am assuming it wont work because it will return a string
-var firstNum = 25;
-var secondNum = 75;
-document.write(firstNum + secondNum);
+// BUT if you parse the prompt it works!!!
+var firstNum = parseInt(prompt("Write a number"));
+var secondNum = parseInt(prompt("Write another number"));
+console.log("The sum of your two numbers is " + (firstNum + secondNum));
 
-var thing1 = true;
-var thing2 = true;
+// Renee wanted the program that adds two numbers in a function
+var a;
+var b;
+function add (a, b) {
+  return a + b;
+}
+console.log(add(10, 5));
 
-function willItRun {
-  if (thing1 = true && thing2 = true)
-  ; else
-};
+var thing1;
+var thing2;
 
-function howAboutNow {
-  if (thing1 = true || thing2 = true)
-  ; else
-};
+function willItRun(thing1, thing2) {
+  if (thing1 === true && thing2 === true) {
+    return "Yes it will run!"
+  } else {
+    return "Sorry, your function is broken."
+  }
+}
 
-function lastOne {
-  if (thing1 = false || thing2 = false)
-  ; else 
-};
+console.log(willItRun(true, true));
+
+function howAboutNow(thing1, thing2) {
+  if (thing1 === true || thing2 === true) {
+    return "Yes it will run!"
+  } else {
+    return "Sorry, your function is broken."
+  }
+}
+
+console.log(howAboutNow(true, false));
+
+function lastOne(thing1, thing2) {
+  if (thing1 === false && thing2 === false) {
+    return "Yes it will run!"
+  } else {
+    return "Sorry, your function is broken."
+  }
+}
+
+console.log(lastOne(false, false));

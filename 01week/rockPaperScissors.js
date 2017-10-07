@@ -16,13 +16,13 @@ function rockPaperScissors(hand1, hand2) {
     return "It's a tie";
   } else {
   // write out all of the hand1 winning combinations
-    if (hand1 === 'rock' && hand2 === 'scissors'){
+    if ((hand1 === 'rock' && hand2 === 'scissors') || (hand1 === 'scissors' && hand2 === 'paper') || (hand1 === 'paper' && hand2 === 'rock')){
       return 'Hand one wins!';
-    } else if (hand1 === 'scissors' && hand2 === 'paper') {
-      return 'Hand one wins!';
-    } else if (hand1 === 'paper' && hand2 === 'rock') {
-      return 'Hand one wins!';
-  // if hand1 does not with than hand2 wins
+    // } else if (hand1 === 'scissors' && hand2 === 'paper') {
+    //   return 'Hand one wins!';
+    // } else if (hand1 === 'paper' && hand2 === 'rock') {
+    //   return 'Hand one wins!';
+  // if hand1 does not win then hand2 wins
     } else {
       return 'Hand two wins!';
     }

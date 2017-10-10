@@ -1,4 +1,4 @@
-// PROJECT:
+"use strict";
 // Use repl.it to write the following code. Paste your code into your workbook in the file called datatypes.js.
 //
 // Write a JavaScript program to display the current day and time.
@@ -31,7 +31,7 @@
 //   Make a variable called string and give it a string value.
 //   Use the parseInt() or the parseFloat() mehtods to convert the string value into a number.
 // Detects and prints what kind of datatype something is
-//   typeOf() method
+//   typeof() method
 // Adds 2 numbers together
 //   variable: firstNum - prompt for first number
 //   variable: secondNum - prompt for second number
@@ -51,39 +51,64 @@
 // CODE:
 
 // not sure why the first variable is necessary to get it to work?
-var today = new Date();
-var weekday = new Array(6);
-// var time = d.getTime();
-var hour = today.getHours();
-var min = today.getMinutes();
-if (min < 10) {
-  min = "0" + min;
+function day_time() {
+  var today = new Date();
+  var weekday = new Array(6);
+  // var time = d.getTime();
+  var hour = today.getHours();
+  var min = today.getMinutes();
+  if (min < 10) {
+    min = "0" + min;
+  }
+  var sec = today.getSeconds();
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
+
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
 }
-var sec = today.getSeconds();
-if (sec < 10) {
-  sec = "0" + sec;
+
+day_time ();
+
+function convertNumber() {
+  var number = 72468;
+  console.log(number.toString());
 }
 
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+convertNumber();
 
-console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
+function convertString() {
+  var string = "72468"
+  console.log(parseInt(string));
+}
 
-var number = 72468;
-console.log(number.toString());
-
-var string = "72468"
-console.log(parseInt(string));
+convertString();
 
 // this does not work as a prompt because no matter what you write in the prompt the computer reads it as a string
 // var object = prompt("Write an example of a datatype");
+function dataType () {
+  let object = true;
+  console.log(typeof object);
+}
+
+dataType();
+
 var object = "Write any kind of datatype in this variable";
 console.log(typeof object);
+
+var object1 = "Hello.";
+console.log(typeof object1);
+
+var object2 = 7;
+console.log(typeof object2);
 
 // homework
 
@@ -102,15 +127,12 @@ function add(a, b) {
 }
 console.log(add(10, 5));
 
-var thing1;
-var thing2;
-
 // will run if both things are true
 function willItRun(thing1, thing2) {
   if (thing1 === true && thing2 === true) {
-    return "Yes it will run!"
+    return "Yes it will run!";
   } else {
-    return "Sorry, your function is broken."
+    return "Sorry, your function is broken.";
   }
 }
 
@@ -119,9 +141,9 @@ console.log(willItRun(true, true));
 // will run if at least one thing is true
 function howAboutNow(thing1, thing2) {
   if (thing1 === true || thing2 === true) {
-    return "Yes it will run!"
+    return "Yes it will run!";
   } else {
-    return "Sorry, your function is broken."
+    return "Sorry, your function is broken.";
   }
 }
 
@@ -130,9 +152,9 @@ console.log(howAboutNow(true, false));
 // will run if both things are false
 function lastOne(thing1, thing2) {
   if (thing1 === false && thing2 === false) {
-    return "Yes it will run!"
+    return "Yes it will run!";
   } else {
-    return "Sorry, your function is broken."
+    return "Sorry, your function is broken.";
   }
 }
 

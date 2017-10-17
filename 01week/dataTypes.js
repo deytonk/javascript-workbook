@@ -97,5 +97,5 @@ function howAboutNow {
 
 function lastOne {
   if (thing1 = false || thing2 = false)
-  ; else 
+  ; else
 };

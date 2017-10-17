@@ -65,37 +65,58 @@ weekday[6] = "Saturday";
 
 document.write(weekday[d.getDay()] + " " + time);
 
-var number = 72468;
-number.toString();
+// var number = 72468;
+// number.toString();
 
-var string = "72468"
-parseInt(string);
+const numberToString = (x) => {
+  x.toString();
+}
+
+// var string = "72468"
+// parseInt(string);
+
+const stringToNumber = (x) => {
+  return parseInt(x);
+}
 
 // this does not work because no matter what you write in the prompt the computer reads it as a string
-var object = prompt("Write an examply of a datatype");
-document.write(typeof object);
+// var object = prompt("Write an example of a datatype");
+// document.write(typeof object);
+
+const whatKindOfDataType = (x) => {
+  document.write(typeof x);
+}
 
 // homework
 
 // I did not even try prompt but I am assuming it wont work because it will return a string
-var firstNum = 25;
-var secondNum = 75;
-document.write(firstNum + secondNum);
+const sum = (firstNum, secondNum) => {
+  document.write(firstNum + secondNum);
+};
 
 var thing1 = true;
 var thing2 = true;
 
-function willItRun {
-  if (thing1 = true && thing2 = true)
-  ; else
+function willItRun (thing1, thing2) {
+  if (thing1 && thing2) {
+    return "both are true";
+  } else {
+    return false;
+  }
 };
 
-function howAboutNow {
-  if (thing1 = true || thing2 = true)
-  ; else
+function howAboutNow (thing1, thing2) {
+  if (thing1 || thing2) {
+    return "one is true";
+  } else {
+    return false;
+  }
 };
 
-function lastOne {
-  if (thing1 = false || thing2 = false)
-  ; else
+function lastOne (thing1, thing2) {
+  if (!thing1 || !thing2) {
+    return "both are false"
+  } else {
+    return false;
+  }
 };

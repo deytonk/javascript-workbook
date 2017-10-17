@@ -113,49 +113,33 @@ console.log(typeof object2);
 // homework
 
 // I did not even try prompt but I am assuming it wont work because it will return a string
-// BUT if you parse the prompt it works!!!
-var firstNum = parseInt(prompt("Write a number"));
-var secondNum = parseInt(prompt("Write another number"));
-console.log("The sum of your two numbers is " + (firstNum + secondNum));
+const sum = (firstNum, secondNum) => {
+  document.write(firstNum + secondNum);
+};
 
-// Renee wanted the program that adds two numbers in a function
-var a;
-var b;
+var thing1 = true;
+var thing2 = true;
 
-function add(a, b) {
-  return a + b;
-}
-console.log(add(10, 5));
-
-// will run if both things are true
-function willItRun(thing1, thing2) {
-  if (thing1 === true && thing2 === true) {
-    return "Yes it will run!";
+function willItRun (thing1, thing2) {
+  if (thing1 && thing2) {
+    return "both are true";
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
+};
 
-console.log(willItRun(true, true));
-
-// will run if at least one thing is true
-function howAboutNow(thing1, thing2) {
-  if (thing1 === true || thing2 === true) {
-    return "Yes it will run!";
+function howAboutNow (thing1, thing2) {
+  if (thing1 || thing2) {
+    return "one is true";
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
+};
 
-console.log(howAboutNow(true, false));
-
-// will run if both things are false
-function lastOne(thing1, thing2) {
-  if (thing1 === false && thing2 === false) {
-    return "Yes it will run!";
+function lastOne (thing1, thing2) {
+  if (!thing1 || !thing2) {
+    return "both are false"
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
-
-console.log(lastOne(false, false));
+};

@@ -37,7 +37,7 @@ function rockPaperScissors(a, b) {
         return "Hand two wins!";
       }
     }
-  }else {
+  } else {
     return "There was a typo, please try again!";
   }
 }

@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
 
-  // Your code here - making sure I made my branch correctly 
+  // Your code here - making sure I made my branch correctly, attempt 2
 
 }
 

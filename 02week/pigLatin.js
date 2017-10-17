@@ -10,7 +10,15 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
 
-  // Your code here - making sure I made my branch correctly, attempt 2
+  // Your code here - making sure I made my branch correctly, attempt 2 https://github.com/deytonk/javascript-workbook/pull/5
+
+  // WHITE BOARDING:
+  // Find position of first vowel (a,e,i,o,u, or y)
+
+  // If vowel is the first letter of the word, return the word with 'ay' at the end, unless Y is the first letter, then treat as other words 
+
+  // For all other words, return any letters before the vowel to the end of the word with 'ay' at the end, moving the first vowel to position 0
+
 
 }
 

@@ -14,12 +14,12 @@ function pigLatin(word) {
 
   // WHITE BOARDING:
   // Find position of first vowel (a,e,i,o,u, or y)
-  const pigLatin = (translateWord) => {
-  translateWord = translateWord.toLowerCase(),
+
+  const word = word.toLowerCase(),
   // look up regex expressions .match(string)
-  firstVowel = translateWord.match(/[aeiouy]/),
-  firstPosition = translateWord.indexOf(firstVowel);
-  }
+  const firstVowel = word.match(/[aeiouy]/),
+  const firstPosition = word.indexOf(firstVowel);
+
   // If vowel is the first letter of the word, return the word with 'ay' at the end, unless Y is the first letter, then treat as other words
 
   // For all other words, return any letters before the vowel to the end of the word with 'ay' at the end, moving the first vowel to position 0

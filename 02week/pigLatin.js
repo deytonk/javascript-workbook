@@ -21,10 +21,13 @@ function pigLatin(word) {
   const firstPosition = word.indexOf(firstVowel);
 
   // If vowel is the first letter of the word, return the word with 'ay' at the end, unless Y is the first letter, then treat as other words
-  if (firstPosition > -1) {
+  if (firstPosition > 0) {
     // For all other words, return any letters before the vowel to the end of the word with 'ay' at the end, moving the first vowel to position 0
     return word.slice(firstPosition) + word.slice(0, firstPosition) + "ay";
   }
+
+  return word + "yay";
+  
 }
 
 

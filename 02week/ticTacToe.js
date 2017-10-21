@@ -2,6 +2,7 @@
 
 const assert = require('assert');
 const readline = require('readline');
+// https://nodejs.org/api/readline.html
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -13,8 +14,7 @@ let board = [
 ];
 
 let playerTurn = 'X';
-if ()
-let win = false;
+let moveCount = 0;
 
 function printBoard() {
   console.log('   0  1  2');
@@ -92,6 +92,10 @@ function checkForWin(playerTurn) {
 
   if (horizontalWin() || verticalWin() || diagonalWin()) {
     console.log(`Player ${playerTurn} Wins!`);
+  } else if (turnCount === 9) {
+    console.log("It's a tie!")
+  } else {
+    return false;
   }
 }
 
@@ -105,6 +109,47 @@ function ticTacToe(row, column) {
   // } else {
   //   playTurn('X');
 // }
+
+  // board[row][column] = playerTurn;
+  // if (moveCount > 0){
+  // checkForWin();
+  // }
+  // moveCount ++;
+  // playerTurn = (playerTurn === "X" ? "O" : "X");
+  // }
+
+const validMove = (row,column) => {
+  if (board[row][column] === ' ') {
+    board[row].splice(column, 1, playTurn);
+  }
+}
+
+  // const validValue = (myIndex) => {
+  //   const valuesArr = [0,1,2];
+  //   return valuesArr.some(validIndex => myIndex == validIndex);
+  // }
+  //
+  // if (validValue(row) && validValue(column)) {
+  //   if (!board[row][column].trim() ) {
+  //     board[row][column] = playerTurn;
+  //
+  //     if (!checkForWin()) {
+  //       if (playerTurn === 'X') {
+  //         playerTurn = 'O';
+  //       } else {
+  //         playerTurn = 'X';
+  //       }
+  //       return false;
+  //     } else {
+  //       console.log(`The winner is player ${playerTurn}.  Start a new game`);
+  //       return true;
+  //     }
+  //   } else {
+  //     console.log('Please choose another square!  That one is taken!');
+  //   }
+  // } else {
+  //   console.log('Please enter a valid index.  Valid values are 0, 1, 2');
+  // }
 
 }
 

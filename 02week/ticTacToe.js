@@ -13,6 +13,7 @@ let board = [
 ];
 
 let playerTurn = 'X';
+let win = false;
 
 function printBoard() {
   console.log('   0  1  2');
@@ -23,39 +24,51 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
-function horizontalWin() {
+// function horizontalWin() {
   // Your code here
   // in row, column format these combinations of matching x's or o's will return a win
   // 00 01 02
   // 10 11 12
   // 20 21 22
-  if (([0,0] === [0,1] === [0,2]) || ([1,0] === [1,1] === [1,2]) || ([2,0] === [2,1] === [2,2])) {
-    return "Player ${} Wins!";
-  }
-}
+  // if (([0,0] === [0,1] === [0,2]) || ([1,0] === [1,1] === [1,2]) || ([2,0] === [2,1] === [2,2])) {
+  //   return "Player ${} Wins!";
+  // }
 
-function verticalWin() {
+// }
+
+// function verticalWin() {
   // Your code here
   // in row, column format these combinations of matching x's or o's will return a win
   // 00 10 20
   // 01 11 21
   // 02 12 22
-  if (([0,0] === [1,0] === [2,0]) || ([0,1] === [1,1] === [2,1]) || ([0,2] === [1,2] === [2,2])) {
-    return "Player ${} Wins!";
-  }
-}
+  // if (([0,0] === [1,0] === [2,0]) || ([0,1] === [1,1] === [2,1]) || ([0,2] === [1,2] === [2,2])) {
+  //   return "Player ${} Wins!";
+  // }
+// }
 
-function diagonalWin() {
+// function diagonalWin() {
   // Your code here
   // in row, column format these combinations of matching x's or o's will return a win
   // 00 11 22
   // 02 11 20
-  if (([0,0] === [1,1] === [2,2]) || ([0,2] === [1,1] === [2,0])) {
-    return "Player ${} Wins!"
-  }
+  // if (([0,0] === [1,1] === [2,2]) || ([0,2] === [1,1] === [2,0])) {
+  //   return "Player ${} Wins!"
+  // }
+// }
+
+winningCombinations = () => {
+  [
+    // horizontal wins
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    // verticals wins
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    // diagonal wins
+    [0, 4, 8], [2, 4, 6]
+  ];
 }
 
-function checkForWin() {
+function checkForWin(playerTurn) {
   // Your code here
   // if in any of the above combinations, there are either all x's or all o's then the respective player wins
   // on each click, if horizontalWin or verticalWin or diagonalWin - gameover and ${} player wins. If no win, then alternate player.

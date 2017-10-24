@@ -13,7 +13,7 @@ let board = [
   [' ', ' ', ' ']
 ];
 
-let playerTurn = 'X';
+let playerTurn = 'O';
 let moveCount = 0;
 
 function printBoard() {
@@ -103,12 +103,16 @@ function ticTacToe(row, column) {
   // Your code here
   // the playerturn will start at x but will alternate between xs and os onclicks, and for each click it will checkForWin.
     // if win, game winner will be announced and board will reset.
-  // call printBoard after every turn (push playerTurn to array)
-  if (playerTurn === 'X') {
-    playerTurn = 'O';
-  } else {
-    playerTurn = 'X';
-  }
+  // call printBoard after every turn (push playerTurn to array
+
+  
+  // if (checkForWin() = false) {
+    if (playerTurn === 'X') {
+      playerTurn = 'O';
+    } else {
+      playerTurn = 'X';
+    }
+  // }
 
   // board[row][column] = playerTurn;
   // if (moveCount > 0){

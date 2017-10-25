@@ -1,5 +1,13 @@
 'use strict';
 
+// WHITEBOARDING:
+// game - 3 columns / rows. Start with an array of 4 numbers in the first column / row.
+// win - Move all 4 numbers into the last (or second) column / row:
+// conditions -
+//   You can only move one number at a time
+//   You can only move the top number of any column / row
+//   You can only stack numbers on top of larger numbers
+
 const assert = require('assert');
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -20,22 +28,23 @@ function printStacks() {
 }
 
 function movePiece() {
-  // Your code here
+  // You can only move the top number of any row, and you can only move one number at a time.
 
 }
 
 function isLegal() {
-  // Your code here
+  // You can only move numbers to either empty rows, or on top of a larger numbers.
+  // You can only move the numbers that are part of the game, in this case 1 - 4.
 
 }
 
 function checkForWin() {
-  // Your code here
+  // You win the game if you have successfully moved all for numbers into either of the other two rows (in order).
 
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
+  // access last child of each stack.
 
 }
 

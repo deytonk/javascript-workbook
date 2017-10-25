@@ -62,6 +62,19 @@ function getPrompt() {
 
 if (typeof describe === 'function') {
 
+  // User can only move objects from stacks a b and c (returns an error message when a user inputs illegal moves)
+
+  describe('#isLegal()', () => {
+    it('should return error message when user inputs illegal move', () => {
+      stacks = {
+        a: [4, 3, 2, 1],
+        b: [],
+        c: []
+      };
+      assert.equal(isLegal('a', 'd'), false);
+    });
+  });
+
   describe('#towersOfHanoi()', () => {
     it('should be able to move a block', () => {
       towersOfHanoi('a', 'b');
@@ -71,7 +84,7 @@ if (typeof describe === 'function') {
 
   // should be able to move a block on top of another block of greater value
 
-  describe('towersOfHanoi()', () => {
+  describe('#towersOfHanoi()', () => {
     it('should be able to move a block on top of another block of greater value', () => {
       towersOfHanoi('b', 'c');
       assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });

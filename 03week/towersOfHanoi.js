@@ -60,6 +60,15 @@ if (typeof describe === 'function') {
     });
   });
 
+  // should be able to move a block on top of another block of greater value
+
+  describe('towersOfHanoi()', () => {
+    it('should be able to move a block on top of another block of greater value', () => {
+      towersOfHanoi('b', 'c');
+      assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });
+    });
+  });
+
   describe('#isLegal()', () => {
     it('should not allow an illegal move', () => {
       stacks = {
@@ -84,6 +93,15 @@ if (typeof describe === 'function') {
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
       assert.equal(checkForWin(), false);
+    });
+  });
+
+  // Should also detect win if all of the numbers are in the c column
+
+  describe('#checkForWin()', () => {
+    it('should also detect a win if all of the numbers are in c column', () => {
+      stacks = { a: [], b: [], c: [4, 3, 2, 1] };
+      assert.equal(checkForWin(), true);
     });
   });
 } else {

@@ -1,3 +1,5 @@
+'use strict';
+
 const arr1 = ['Zeus', 'Hades', 'Poseidon', 'Apollo', 'Hera'];
 
 const printListOfOlympians = (arr1) => {
@@ -5,5 +7,4 @@ const printListOfOlympians = (arr1) => {
     console.log(olympians);
   });
 }
-
-// fake correction
+printListOfOlympians(arr1);

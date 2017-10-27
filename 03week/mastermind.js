@@ -28,13 +28,38 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+// function generateHint() {
   // your code here
-}
+// }
+
+const generateHint = (solution, guess) => {
+  console.log(solution, guess);
+  const solutionArr = solution.split('');
+  const guessArr = guess.split('');
+  console.log(solution, guess);
+  // I want to find all the letters in guessArr that are in solutionArr at the same position.
+  let correctLetterLocations = 0;
+  guessArr.forEach((guessLetter, guessIndex) = {
+    const guessLetterInSolutionArr = solutionArr.indexOf(guessLetter);
+    if(guessLetterInSolutionArr !== -1){
+      correctLetterLocations ++
+    } else{
+      
+    }
+    if(solutionArr.indexOf(guessLetter) === guessIndex) {
+      correctLetterLocations ++
+    }
+  });
+};
 
 function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
+  // solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+  if(guess === solution) {
+    return 'You guessed it!'
+  }else {
+    generateHint(solution, guess);
+  }
 }
 
 
@@ -72,6 +97,6 @@ if (typeof describe === 'function') {
 
 } else {
 
-  generateSolution();
+  // generateSolution();
   getPrompt();
 }

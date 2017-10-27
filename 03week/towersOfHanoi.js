@@ -29,7 +29,7 @@ function printStacks() {
 
 function movePiece() {
   // You can only move the top number of any row, and you can only move one number at a time.
-
+  // const userObj = stack[].pop();
 }
 
 function isLegal() {

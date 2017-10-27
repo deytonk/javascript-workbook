@@ -27,18 +27,18 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(movefrom, moveTo) {
   // You can only move the top number (pop method) of any stack, and you can only move one number at a time, and you move the number the another stack with the push method.
   // const userObj = stack[].pop();
-  if (isLegal(moveFrom, moveTo)) {
-    stack[moveTo].push(stack[moveFrom].pop());
-  }
+  // if (isLegal(moveFrom, moveTo)) {
+  stacks[moveTo].push(stacks[moveFrom].pop());
+  // }
 }
 
 function isLegal(moveFrom, moveTo) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if (stack[moveTo].length === 0){
+  if (stacks[moveTo].length === 0){
     return true;
   } else if (stacks[moveFrom].pop() < stacks[moveTo].pop()){
     return true;
@@ -57,15 +57,18 @@ function checkForWin() {
 }
 
 function towersOfHanoi(moveFrom, moveTo) {
-  // access last child of each stack
-
+  // if function isLegal then movePiece and then checkWin until there is a win and then end game.
+  if (movePiece(moveFrom, moveTo)) {
+    isLegal(moveFrom, moveTo);
+  }
+  checkForWin();
 }
 
 function getPrompt() {
   printStacks();
   rl.question('start stack: ', (moveFrom) => {
     rl.question('end stack: ', (moveTo) => {
-      towersOfHanoi(startStack, endStack);
+      towersOfHanoi(moveFrom, moveTo);
       getPrompt();
     });
   });
@@ -97,10 +100,14 @@ if (typeof describe === 'function') {
 
   // should be able to move a block on top of another block of greater value
 
-  describe('#towersOfHanoi()', () => {
+  describe('#isLegal()', () => {
     it('should be able to move a block on top of another block of greater value', () => {
-      towersOfHanoi('b', 'c');
-      assert.deepEqual(stacks, { a: [4, 3], b: [1], c: [2] });
+      stacks = {
+        a: [4, 3],
+        b: [1],
+        c: [2]
+      };
+      assert.equal(isLegal('b', 'c'), true);
     });
   });
 

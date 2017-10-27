@@ -29,13 +29,19 @@ function printStacks() {
 
 function movePiece() {
   // You can only move the top number (pop method) of any row, and you can only move one number at a time.
-  // const userObj = stack[].pop();
+  const userObj = stack[].pop();
 }
 
-function isLegal() {
-  // You can only move numbers to either empty rows, or on top of a larger numbers.
+function isLegal(moveFrom, moveTo) {
+  // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-
+  if (stack.length === 0){
+    return true;
+  } else if (moveFrom.pop() < moveTo.pop()){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function checkForWin() {
@@ -47,7 +53,7 @@ function checkForWin() {
   }
 }
 
-function towersOfHanoi(startStack, endStack) {
+function towersOfHanoi(moveFrom, moveTo) {
   // access last child of each stack
 
 }

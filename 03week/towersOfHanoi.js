@@ -28,16 +28,19 @@ function printStacks() {
 }
 
 function movePiece() {
-  // You can only move the top number (pop method) of any row, and you can only move one number at a time.
-  const userObj = stack[].pop();
+  // You can only move the top number (pop method) of any stack, and you can only move one number at a time, and you move the number the another stack with the push method.
+  // const userObj = stack[].pop();
+  if (isLegal(moveFrom, moveTo)) {
+    stack[moveTo].push(stack[moveFrom].pop());
+  }
 }
 
 function isLegal(moveFrom, moveTo) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if (stack.length === 0){
+  if (stack[moveTo].length === 0){
     return true;
-  } else if (moveFrom.pop() < moveTo.pop()){
+  } else if (stacks[moveFrom].pop() < stacks[moveTo].pop()){
     return true;
   } else {
     return false;
@@ -60,8 +63,8 @@ function towersOfHanoi(moveFrom, moveTo) {
 
 function getPrompt() {
   printStacks();
-  rl.question('start stack: ', (startStack) => {
-    rl.question('end stack: ', (endStack) => {
+  rl.question('start stack: ', (moveFrom) => {
+    rl.question('end stack: ', (moveTo) => {
       towersOfHanoi(startStack, endStack);
       getPrompt();
     });

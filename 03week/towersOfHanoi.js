@@ -27,23 +27,24 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece(movefrom, moveTo) {
+function movePiece(startStack, endStack) {
   // You can only move the top number (pop method) of any stack, and you can only move one number at a time, and you move the number the another stack with the push method.
   // const userObj = stack[].pop();
-  // if (isLegal(moveFrom, moveTo)) {
-  stacks[moveTo].push(stacks[moveFrom].pop());
+  // if (isLegal(startStack, endStack)) {
+  stacks[endStack].push(stacks[startStack].pop());
   // }
 }
 
-function isLegal(moveFrom, moveTo) {
+function isLegal(startStack, endStack) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if (stacks[moveTo].length === 0){
+  if (stacks[endStack].length === 0){
     return true;
-  } else if (stacks[moveFrom].pop() < stacks[moveTo].pop()){
+  } else if (stacks[startStack].pop() < stacks[endStack].pop()){
     return true;
   } else {
     return false;
+    // redo??
   }
 }
 
@@ -56,19 +57,19 @@ function checkForWin() {
   }
 }
 
-function towersOfHanoi(moveFrom, moveTo) {
+function towersOfHanoi(startStack, endStack) {
   // if function isLegal then movePiece and then checkWin until there is a win and then end game.
-  if (movePiece(moveFrom, moveTo)) {
-    isLegal(moveFrom, moveTo);
+  if (movePiece(startStack, endStack)) {
+    isLegal(startStack, endStack);
   }
   checkForWin();
 }
 
 function getPrompt() {
   printStacks();
-  rl.question('start stack: ', (moveFrom) => {
-    rl.question('end stack: ', (moveTo) => {
-      towersOfHanoi(moveFrom, moveTo);
+  rl.question('start stack: ', (startStack) => {
+    rl.question('end stack: ', (endStack) => {
+      towersOfHanoi(startStack, endStack);
       getPrompt();
     });
   });
@@ -78,7 +79,7 @@ function getPrompt() {
 
 if (typeof describe === 'function') {
 
-  // User can only move objects from stacks a b and c (returns an error message when a user inputs illegal moves)
+  // User can only move objects from stacks a b and c (returns an error message when a user inputs illegal character)
 
   // describe('#isLegal()', () => {
   //   it('should return error message when user inputs illegal move', () => {

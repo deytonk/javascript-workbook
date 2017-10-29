@@ -76,6 +76,7 @@ function day_time() {
   console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
 }
 
+<<<<<<< HEAD
 day_time ();
 
 function convertNumber() {
@@ -109,6 +110,29 @@ console.log(typeof object1);
 
 var object2 = 7;
 console.log(typeof object2);
+=======
+// var number = 72468;
+// number.toString();
+
+const numberToString = (x) => {
+  x.toString();
+}
+
+// var string = "72468"
+// parseInt(string);
+
+const stringToNumber = (x) => {
+  return parseInt(x);
+}
+
+// this does not work because no matter what you write in the prompt the computer reads it as a string
+// var object = prompt("Write an example of a datatype");
+// document.write(typeof object);
+
+const whatKindOfDataType = (x) => {
+  document.write(typeof x);
+}
+>>>>>>> 5bd60ebe9c867cc26fca388446688ad54f6ded84
 
 // homework
 

@@ -38,13 +38,15 @@ function movePiece(startStack, endStack) {
 function isLegal(startStack, endStack) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if (stacks[endStack].length === 0){
+  if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
+    return true;
+  } else if (stacks[endStack].length === 0){
     return true;
   } else if (stacks[startStack].pop() < stacks[endStack].pop()){
     return true;
   } else {
     return false;
-    // redo??
+    console.log("Invalid entry. Please try again!");
   }
 }
 

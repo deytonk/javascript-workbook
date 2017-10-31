@@ -59,7 +59,9 @@ do {
 while(num <= 1000);
 
 // 1. When is a for loop better than a while loop?
-
-// 2. How is the readability of the code affected?
+  A for loop is better than a while loop when you do not only need the loop to run while something else happening.
+// 2. How is the readability of the code affected
+  
 // 3. What is the difference between a for loop and a for...in loop?
+
 // 4. What is the difference between a while loop and a do...while loop?

@@ -103,7 +103,7 @@ function getPrompt() {
   console.log("Moves: " + moveCount);
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
-      towersOfHanoi(startStack, endStack, moveCount);
+      towersOfHanoi(startStack, endStack);
       getPrompt();
     });
   });

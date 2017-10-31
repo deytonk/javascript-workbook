@@ -30,6 +30,9 @@ function printStacks() {
 function isValid(startStack, endStack) {
   if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
     return true;
+  } else if (stacks(startStack).length === 0) {
+    return false;
+    console.log("This stack is empty, please choose another!");
   } else {
     console.log("This is an invalid entry, please try again!");
     return false;
@@ -38,18 +41,13 @@ function isValid(startStack, endStack) {
 function isLegal(startStack, endStack) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
-    return true;
-  } else if (stacks(startStack).length === 0){
-    return false;
-    console.log("Invalid entry. Please try again!");
-  } else if (stacks[endStack].length === 0){
+  if (stacks[endStack].length === 0){
     return true;
   } else if (stacks[startStack].pop() < stacks[endStack].pop()){
     return true;
   } else {
+    console.log("That is an illegal move, please try again!");
     return false;
-    console.log("Invalid entry. Please try again!");
   }
 }
 
@@ -66,11 +64,7 @@ function checkForWin() {
   if ((stacks.b.length === 4) || (stacks.c.length === 4)) {
     return true;
     console.log("You Won!");
-    // let stacks = {
-    //   a: [4, 3, 2, 1],
-    //   b: [],
-    //   c: []
-    // };
+    // printStacks(); < this will print updated stacks?
   } else {
     return false;
   }
@@ -78,10 +72,12 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // if function isLegal then movePiece and then checkWin until there is a win and then end game.
-  if (isLegal(startStack, endStack)) {
+  if (isValid(startStack, endStack) && isLegal(startStack, endStack)) {
     movePiece(startStack, endStack);
+    checkForWin();
+  } else {
+    // ?
   }
-  checkForWin();
 }
 
 function getPrompt() {

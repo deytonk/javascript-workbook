@@ -21,6 +21,8 @@ let stacks = {
   c: []
 };
 
+let moveCount = 0;
+
 function printStacks() {
   console.log("a: " + stacks.a);
   console.log("b: " + stacks.b);
@@ -32,6 +34,7 @@ function movePiece(startStack, endStack) {
   // const userObj = stack[].pop();
   if (isValid(startStack, endStack) && isLegal(startStack, endStack)) {
     stacks[endStack].push(stacks[startStack].pop());
+    moveCount++;
   } else {
     console.log("Please try again!");
     return false;
@@ -97,9 +100,10 @@ function towersOfHanoi(startStack, endStack) {
 
 function getPrompt() {
   printStacks();
+  console.log("Moves: " + moveCount);
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
-      towersOfHanoi(startStack, endStack);
+      towersOfHanoi(startStack, endStack, moveCount);
       getPrompt();
     });
   });

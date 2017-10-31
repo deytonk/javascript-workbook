@@ -43,6 +43,16 @@ for (const keys in persons) {
   }
 }
 
+// 5
+let num = 1;
+while(num <= 1000) {
+  console.log(num);
+  num++;
+}
+
+// 6
+
+
 // 1. When is a for loop better than a while loop?
 
 // 2. How is the readability of the code affected?

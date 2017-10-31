@@ -41,7 +41,7 @@ function movePiece(startStack, endStack) {
 function isValid(startStack, endStack) {
   if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
     return true;
-  } else if (stacks(startStack).length === 0) {
+  } else if (stacks[startStack].length === 0) {
     console.log("This stack is empty, please choose another!");
     return false;
   } else {
@@ -55,7 +55,8 @@ function isLegal(startStack, endStack) {
   // You can only move the numbers that are part of the game, in this case 1 - 4.
   if (stacks[endStack].length === 0){
     return true;
-  } else if (stacks[startStack].pop() < stacks[endStack].pop()){
+  // } else if (stacks[startStack].pop() < stacks[endStack].pop()){ This is my code and I know it is what is messing up my game play but I do not understand why. Below is something I got from someone else
+  } else if (stacks[startStack][(stacks[startStack].length) - 1] < stacks[endStack][(stacks[endStack].length) - 1]){
     return true;
   } else {
     console.log("That is an illegal move, please try again!");
@@ -76,9 +77,8 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // if function isLegal then movePiece and then checkWin until there is a win and then end game.
-  if (movePiece(startStack, endStack)) {
-    checkForWin();
-  }
+  movePiece(startStack, endStack);
+  checkForWin();
 }
 
 function getPrompt() {

@@ -41,22 +41,36 @@ function movePiece(startStack, endStack) {
 function isValid(startStack, endStack) {
   if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
     return true;
-  } else if (stacks[startStack].length === 0) {
-    console.log("This stack is empty, please choose another!");
-    return false;
   } else {
     console.log("This is an invalid entry, please try again!");
     return false;
   }
 }
 
-function isLegal(startStack, endStack) {
+// function isLegal(startStack, endStack) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
   // You can only move the numbers that are part of the game, in this case 1 - 4.
-  if (stacks[endStack].length === 0){
-    return true;
+  // if (stacks[endStack].length === 0) {
+  //   return true;
   // } else if (stacks[startStack].pop() < stacks[endStack].pop()){ This is my code and I know it is what is messing up my game play but I do not understand why. Below is something I got from someone else
-  } else if (stacks[startStack][(stacks[startStack].length) - 1] < stacks[endStack][(stacks[endStack].length) - 1]){
+//   } else if (stacks[startStack][(stacks[startStack].length) - 1] < stacks[endStack][(stacks[endStack].length) - 1]) {
+//     return true;
+//   } else if (stacks[startStack].length === 0) {
+//     console.log("This stack is empty, please choose another!");
+//     return false;
+//   } else {
+//     console.log("That is an illegal move, please try again!");
+//     return false;
+//   }
+// }
+
+function isLegal(startStack, endStack) {
+  if (stacks[startStack].length === 0) {
+    console.log("This stack is empty, please choose another!");
+    return false;
+  } else if (stacks[endStack].length === 0) {
+    return true;
+  } else if (stacks[startStack][(stacks[startStack].length) - 1] < stacks[endStack][(stacks[endStack].length) - 1]) {
     return true;
   } else {
     console.log("That is an illegal move, please try again!");

@@ -51,7 +51,12 @@ while(num <= 1000) {
 }
 
 // 6
-
+let num = 1;
+do {
+  console.log(num);
+  num++;
+}
+while(num <= 1000);
 
 // 1. When is a for loop better than a while loop?
 

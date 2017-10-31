@@ -27,16 +27,28 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
+function movePiece(startStack, endStack) {
+  // You can only move the top number (pop method) of any stack, and you can only move one number at a time, and you move the number the another stack with the push method.
+  // const userObj = stack[].pop();
+  if (isValid(startStack, endStack) && isLegal(startStack, endStack)) {
+    stacks[endStack].push(stacks[startStack].pop());
+  } else {
+    console.log("Please try again!");
+    return false;
+  }
+}
+
 function isValid(startStack, endStack) {
   if ((startStack === "a" || startStack === "b" || startStack === "c") && (endStack === "a" || endStack === "b" || endStack === "c")) {
     return true;
   } else if (stacks(startStack).length === 0) {
-    return false;
     console.log("This stack is empty, please choose another!");
+    return false;
   } else {
     console.log("This is an invalid entry, please try again!");
     return false;
   }
+}
 
 function isLegal(startStack, endStack) {
   // You can only move numbers to either empty rows, or on top of a larger numbers. if the last item of the array that you are moving from is less than the last item of the array you are moving to.
@@ -51,20 +63,12 @@ function isLegal(startStack, endStack) {
   }
 }
 
-function movePiece(startStack, endStack) {
-  // You can only move the top number (pop method) of any stack, and you can only move one number at a time, and you move the number the another stack with the push method.
-  // const userObj = stack[].pop();
-  // if (isLegal(startStack, endStack)) {
-  stacks[endStack].push(stacks[startStack].pop());
-  // }
-}
-
 function checkForWin() {
   // You win the game if you have successfully moved all four numbers into either of the other two rows (in order).
   if ((stacks.b.length === 4) || (stacks.c.length === 4)) {
-    return true;
     console.log("You Won!");
-    // printStacks(); < this will print updated stacks?
+    return true;
+    // printStacks(); < this will print updated stacks? make new reset function?
   } else {
     return false;
   }
@@ -72,11 +76,8 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // if function isLegal then movePiece and then checkWin until there is a win and then end game.
-  if (isValid(startStack, endStack) && isLegal(startStack, endStack)) {
-    movePiece(startStack, endStack);
+  if (movePiece(startStack, endStack)) {
     checkForWin();
-  } else {
-    // ?
   }
 }
 
@@ -96,16 +97,16 @@ if (typeof describe === 'function') {
 
   // User can only move objects from stacks a b and c (returns an error message when a user inputs illegal character)
 
-  // describe('#isLegal()', () => {
-  //   it('should return error message when user inputs illegal move', () => {
-  //     stacks = {
-  //       a: [4, 3, 2, 1],
-  //       b: [],
-  //       c: []
-  //     };
-  //     assert.equal(isLegal('a', 'd'), false);
-  //   });
-  // });
+  describe('#isValid()', () => {
+    it('should return error message when user inputs illegal move', () => {
+      stacks = {
+        a: [4, 3, 2, 1],
+        b: [],
+        c: []
+      };
+      assert.equal(isValid('a', 'd'), false);
+    });
+  });
 
   describe('#towersOfHanoi()', () => {
     it('should be able to move a block', () => {

@@ -59,9 +59,10 @@ do {
 while(num <= 1000);
 
 // 1. When is a for loop better than a while loop?
-  A for loop is better than a while loop when you do not only need the loop to run while something else happening.
+  // A for loop is better than a while loop when you know how many iterations there will be.
 // 2. How is the readability of the code affected
-  
+  The conditions in a for loop are clearly defined in the statement where as the while loop has less required conditions and therefor is easier to read and understand standalone, but is also more prone to errors.
 // 3. What is the difference between a for loop and a for...in loop?
-
+  // A for...in loop is a for loop specified to iterate over the enumerable properties of an object.
 // 4. What is the difference between a while loop and a do...while loop?
+  // A do...while loop will repeat until a specific condition evaluates to false (which is defined after the statement) and a while loop will repeat as long as the condition (defined in the statement) evaluates to true.

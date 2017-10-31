@@ -37,8 +37,10 @@ for (const keys in persons) {
 }
 
 // 4.
-for (const values in persons) {
-
+for (const keys in persons) {
+  if (keys === 'birthDate') {
+    console.log(persons[keys]);
+  }
 }
 
 // 1. When is a for loop better than a while loop?

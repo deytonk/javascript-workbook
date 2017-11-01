@@ -72,6 +72,8 @@ function diagonalWin() {
 //   ];
 // }
 
+
+
 function checkForWin() {
   // Your code here
   // if in any of the above combinations, there are either all x's or all o's then the respective player wins
@@ -90,10 +92,14 @@ function checkForWin() {
   // return false;
   // }
 
-  if (horizontalWin() || verticalWin() || diagonalWin()) {
-    console.log(`Player ${playerTurn} Wins!`);
-  } else if (turnCount === 9) {
-    console.log("It's a tie!")
+  if (moveCount === 9) {
+    console.log("It's a tie!");
+    return true;
+    // reset();
+  } else if (horizontalWin() || verticalWin() || diagonalWin()) {
+    console.log(`Player ${playerTurn} Wins!`)
+    return true;
+    // reset();
   } else {
     return false;
   }
@@ -103,15 +109,19 @@ function ticTacToe(row, column) {
   // Your code here
   // the playerturn will start at x but will alternate between xs and os onclicks, and for each click it will checkForWin.
     // if win, game winner will be announced and board will reset.
-  // call printBoard after every turn (push playerTurn to array
+  // call printBoard after every turn (push playerTurn to array)
 
-  
-  // if (checkForWin() = false) {
-    if (playerTurn === 'X') {
-      playerTurn = 'O';
-    } else {
-      playerTurn = 'X';
-    }
+  // if ((row === 0 || 1 || 2) && (column === 0 || 1 || 2)) {
+  checkForWin();
+  // if (checkForWin() === false){
+  if (playerTurn === 'X') {
+    playerTurn = 'O';
+  } else {
+    playerTurn = 'X';
+  }
+  moveCount++;
+  // } else {
+  //   console.log("Invalid move, please try again!")
   // }
 
   // board[row][column] = playerTurn;

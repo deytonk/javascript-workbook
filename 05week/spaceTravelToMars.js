@@ -9,7 +9,14 @@ let jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code here
+class CrewMember (name, job, specialSkill, ship) {
+  this.name = name
+  this.job = job
+}
+
+class Ship {
+
+}
 
 //tests
 if (typeof describe === 'function'){

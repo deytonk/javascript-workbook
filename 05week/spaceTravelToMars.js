@@ -1,5 +1,7 @@
 'use strict';
 
+// https://github.com/deytonk/javascript-workbook/pull/11
+
 let assert = require('assert');
 
 let jobTypes = {

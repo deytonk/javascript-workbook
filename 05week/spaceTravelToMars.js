@@ -14,14 +14,15 @@ class CrewMember {
     this.name = name;
     this.job = job;
     this.specialSkill = specialSkill;
-    this.ship = null;
+    this.ship = ship;
+  }
+
+  // Make a method that takes a new CrewMember and assigns it a ship (and adds the new crewMember to the ship's crew).
+  enterShip(ship) {
+  this.ship = ship;
+  ship.crew.push(this);
   }
 }
-
-function enterShip() {
-  this.ship = ship;
-  Ship.crew.push(this);
-  }
 
 class Ship {
   constructor(name, type, ability, crew) {
@@ -30,23 +31,19 @@ class Ship {
     this.ability = ability;
     this.crew = [];
   }
-}
-function missionStatement() {
-    if (enterShip()){
+
+  // Make a method that returns the ship's ability ONLY IF a crew member enters the ship (enterShip), else it will return the message "Can't perform a mission yet."
+  missionStatement() {
+    if (CrewMember.enterShip()) {
       console.log(this.ability);
     }
   }
+}
 
 const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
 const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
 const hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
 const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
-
-
-// const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
-// const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
-// const hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
-// const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
 
 //tests
 if (typeof describe === 'function'){

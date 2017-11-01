@@ -32,18 +32,21 @@ class Ship {
     this.crew = [];
   }
 
-  // Make a method that returns the ship's ability ONLY IF a crew member enters the ship (enterShip), else it will return the message "Can't perform a mission yet."
+  // Make a method that returns the ship's ability ONLY IF a crew member enters
+  // the ship (enterShip), else it will return the message "Can't perform a mission yet."
   missionStatement() {
-    if (CrewMember.enterShip()) {
-      console.log(this.ability);
+    if (this.crew.length < 1) {
+      return "Can't perform a mission yet.";
+    } else {
+      return this.ability;
     }
   }
 }
 
-const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
-const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
-const hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
-const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
+// const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+// const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+// const hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+// const crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
 
 //tests
 if (typeof describe === 'function'){

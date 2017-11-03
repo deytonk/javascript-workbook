@@ -60,24 +60,24 @@ function Board() {
   };
 
   this.populateGrid = () => {
-      // loops through the 8 rows
-      for (let row = 0; row < 8; row++) {
-        // ignores rows which should be empty
-        if (row === 3 || row === 4) continue;
-        // loops through the 8 columns
-        for (let col = 0; col < 8; col++) {
-          // sets current color based on the current row
-          let color = (row < 3 ? 'white' : 'black');
-          // alternates cells to populate with either white or black checkers
-          // then pushes checker to array named checkers
-          if (row % 2 === 0 && col % 2 === 1) {
-            this.grid[row][col] = new Checker(color);
-          } else if (row % 2 === 1 && col % 2 === 0) {
-            this.grid[row][col] = new Checker(color);
-          }
+    // loops through the 8 rows
+    for (let row = 0; row < 8; row++) {
+      // ignores rows which should be empty
+      if (row === 3 || row === 4) continue;
+      // loops through the 8 columns
+      for (let col = 0; col < 8; col++) {
+        // sets current color based on the current row
+        let color = (row < 3 ? 'white' : 'black');
+        // alternates cells to populate with either white or black checkers
+        // then pushes checker to array named checkers
+        if (row % 2 === 0 && col % 2 === 1) {
+          this.grid[row][col] = new Checker(color);
+        } else if (row % 2 === 1 && col % 2 === 0) {
+          this.grid[row][col] = new Checker(color);
         }
       }
-    };
+    }
+  };
 }
 
 function Game() {
@@ -88,7 +88,43 @@ function Game() {
     this.board.createGrid();
     this.board.populateGrid();
   };
+
+  this.isLegal = (start, end) => {
+    // figure out how to call an array inide of an array and determine if start has a piece and end is empty.
+    // if checker = black : start[0] needs to be 1 less than end[0] && start[1] needs to be either +1 || -1 of end[1]
+    // if checker = white : start[0] needs to be 1 more than end[0] && start[1] needs to be either +1 || -1 of end[1]
+    if (this.board.grid[start[0]][start[1]]) {
+      if ([start[0]] - 1 === [end[0]]) {
+        if (([start[1]] - 1 === [end[1]]) || ([start[1]] + 1 === [end[1]])) {
+        }
+      }
+    }
+  }
+
+  this.alternateTurns = () => {
+
+  }
+
+  this.killChecker = () => {
+
+  }
+
+  this.moveChecker = (x,y) => {
+    // steralize the input data (Take the 4 numbers entered and turn them into 2)
+    const start = x.split('').map(str => Number(str));
+    const end = y.split('').map(str => Number(str));
+
+    // You take the value in the start checker position and you copy it into the end checker location, and then you delete that value from the start location.
+    // Why doesn't push() work? becuase it just adds that value to end of the value that is already there? not 100% sure.
+    this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
+    this.board.grid[start[0]][start[1]] = null;
+  }
+
 }
+
+// function moveChecker() {
+//
+// }
 
 function getPrompt() {
   game.board.viewGrid();

@@ -93,21 +93,40 @@ function Game() {
     // figure out how to call an array inide of an array and determine if start has a piece and end is empty.
     // if checker = black : start[0] needs to be 1 less than end[0] && start[1] needs to be either +1 || -1 of end[1]
     // if checker = white : start[0] needs to be 1 more than end[0] && start[1] needs to be either +1 || -1 of end[1]
+    // BONUS IF TIME:
+      // if checker = black : start[0] needs to be 2 less than end[0] && start[1] needs to be either +2 || -2 of end[1]
+      // if checker = white : start[0] needs to be 2 more than end[0] && start[1] needs to be either +2 || -2 of end[1]
+
+    // There is obviously a way to condense this but I am going to focus on making it work.
     if (this.board.grid[start[0]][start[1]]) {
-      if ([start[0]] - 1 === [end[0]]) {
-        if (([start[1]] - 1 === [end[1]]) || ([start[1]] + 1 === [end[1]])) {
+      if (color === 'black') {
+        if ((([start[0]] - 1 === [end[0]]) && (([start[1]] - 1 === [end[1]]) || ([start[1]] + 1 === [end[1]]))) ||
+        (([start[0]] - 2 === [end[0]]) && (([start[1]] - 2 === [end[1]]) || ([start[1]] + 2 === [end[1]])))) {
+          if (this.board.grid[end[0]][end[1]]) {
+            // moveChecker();
+          }
+        }
+      } if (color === 'white') {
+        if ((([start[0]] + 1 === [end[0]]) && (([start[1]] - 1 === [end[1]]) || ([start[1]] + 1 === [end[1]]))) ||
+        (([start[0]] + 2 === [end[0]]) && (([start[1]] - 2 === [end[1]]) || ([start[1]] + 2 === [end[1]])))) {
+          if (this.board.grid[end[0]][end[1]]) {
+            // moveChecker();
+          }
         }
       }
+    } else {
+      console.log("This is an illegal move, please try again.");
+      return false;
     }
   }
 
-  this.alternateTurns = () => {
+  this.alternateTurns = (checker) => {
 
-  }
+  };
 
   this.killChecker = () => {
 
-  }
+  };
 
   this.moveChecker = (x,y) => {
     // steralize the input data (Take the 4 numbers entered and turn them into 2)
@@ -115,16 +134,14 @@ function Game() {
     const end = y.split('').map(str => Number(str));
 
     // You take the value in the start checker position and you copy it into the end checker location, and then you delete that value from the start location.
-    // Why doesn't push() work? becuase it just adds that value to end of the value that is already there? not 100% sure.
-    this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
-    this.board.grid[start[0]][start[1]] = null;
-  }
+    // Why doesn't push() work? because it just adds that value to end of the value that is already there? not 100% sure.
+    // if (isLegal(x, y)) {
+      this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
+      this.board.grid[start[0]][start[1]] = null;
+    // }
+  };
 
 }
-
-// function moveChecker() {
-//
-// }
 
 function getPrompt() {
   game.board.viewGrid();

@@ -39,7 +39,47 @@ const whatFilterDoes = (arr, callbackFunc) => {
 
 whatFilterDoes(filterArr, (num) => num < 3);
 
+// For your project, we are going to go back into time and re-implement all of these higher-order functions from scratch. Place your code in the /06week/higherOrder.js file in your workbook.
+//
+// 1. Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
 
+const mySome = (arr, callBack) => {
+  let somethingPasses = false;
+  const breakException = {};
+  arr.forEach((item) => {
+    if (callBack(item)) {
+      somethingPasses = true;
+      throw breakException;
+    }
+  });
+
+  return somethingPasses;
+};
+
+const someArr = [5, 7, 10, 400, 10000, 5];
+const test = mySome(someArr, (item) => {return item > 50});
+
+console.log(test);
+
+// 2. Create an every() function that takes an array of items and a function that returns true or false if all of the items return true in the function.
+
+const myEvery = (arr, callBack) => {
+  let somethingPasses = true;
+  const breakException = {};
+  arr.forEach((item) => {
+    if (callBack(item)) {
+      somethingPasses = false;
+      throw breakException;
+    }
+  });
+
+  return somethingPasses;
+};
+
+const everyArr = [5, 7, 10, 400, 10000, 5];
+const test = myEvery(everyArr, (item) => {return item > 50});
+
+console.log(test);
 
 
 

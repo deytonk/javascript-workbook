@@ -1,13 +1,12 @@
 'use strict';
 
 // Create a forEach() function that takes an array of items and a function that runs the function arr.length number of times.
-
+// let because for each does not return a new array
 let forEachArr = [1, 2, 3, 4, 5, 6];
 
-const whatForEachDoes = (i, callbackFunc) => {
-  let newArr = [];
+const whatForEachDoes = (arr, callbackFunc) => {
   for (i = 0; i < forEachArr.length; i++) {
-    newArr.push(callbackFunc(i));
+    forEachArr.push(callbackFunc(i));
   }
 };
 
@@ -15,11 +14,30 @@ whatForEachDoes(forEachArr, (num) => num + 1);
 
 // Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
 
+const mapArr = [1, 2, 3, 4, 5, 6];
+
+const whatMapDoes = (arr, callbackFunc) => {
+  let newArr = [];
+  mapArr.forEach((i) => {
+    newArr.push(callbackFunc(i));
+  });
+  return newArr;
+};
+
+whatMapDoes(mapArr, (num) => num + 1);
 
 // Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
-arr.filter((item, index, arr) => {
 
-});
+const filterArr = [1, 2, 3, 4, 5, 6];
+
+const whatFilterDoes = (arr, callbackFunc) => {
+  let newArr = [];
+  filterArr.forEach((i) => {
+    newArr.push(callbackFunc(i));
+  });
+};
+
+whatFilterDoes(filterArr, (num) => num < 3);
 
 
 

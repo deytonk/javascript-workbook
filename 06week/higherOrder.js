@@ -1,16 +1,20 @@
 'use strict';
 
-const arr = ['', '', '', '', '', '']
-
 // Create a forEach() function that takes an array of items and a function that runs the function arr.length number of times.
-arr.forEach((item, index, arr) => {
 
-});
+let forEachArr = [1, 2, 3, 4, 5, 6];
+
+const whatForEachDoes = (i, callbackFunc) => {
+  let newArr = [];
+  for (i = 0; i < forEachArr.length; i++) {
+    newArr.push(callbackFunc(i));
+  }
+};
+
+whatForEachDoes(forEachArr, (num) => num + 1);
 
 // Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
-arr.map((item, index, arr) => {
 
-});
 
 // Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
 arr.filter((item, index, arr) => {
@@ -21,11 +25,11 @@ arr.filter((item, index, arr) => {
 
 
 
-// Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
+// 1. Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
 
 const test = [1, 2, 3, 4, 5, 6];
 
-const doThis = (arr, callbackFunc) => {
+const whatMapDoes = (arr, callbackFunc) => {
   const newArr = [];
   arr.forEach((i) => {
     newArr.push(callbackFunc(i));
@@ -33,8 +37,9 @@ const doThis = (arr, callbackFunc) => {
   return newArr;
 };
 
-doThis(test, (num) => num + 1);
+whatMapDoes(test, (num) => num + 1);
 
+  // The map() method for reference:
 const test2 = test.map((num, index) => {
   return num + 1;
 });
@@ -43,7 +48,7 @@ console.log(test2);
 
 console.log(test.map((num, index) => num + 1));
 
-// Create an object and store it to a variable called userObject. It must have at least 8 key/value pairs.
+// 2. Create an object and store it to a variable called userObject. It must have at least 8 key/value pairs.
 
 const userObject = {
   name: 'Deyton',
@@ -68,4 +73,4 @@ console.log(userKeyArray);
 
 const userValueArray = [];
 
-doThis(userValleyArray, (userKeyArray) => userKeyArray.values(userObject));
+whatMapDoes(userValleyArray, (userKeyArray) => userKeyArray.values(userObject));

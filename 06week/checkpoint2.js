@@ -5,7 +5,7 @@
 // Take the following array of objects and console.log each user and their corresponding data in the following form:
 // "user_name paid amount for product in city, state." using map.
 
-let userArray = [{
+const userArray = [{
     "customer": {
       "id": 1,
       "customerName": "Marilyn Monroe",
@@ -46,3 +46,11 @@ let userArray = [{
     }
   },
 ];
+
+const statement = userArray.map(function() {
+  return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
+});
+
+
+
+console.log(statement);

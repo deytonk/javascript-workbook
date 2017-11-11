@@ -90,6 +90,8 @@ function Game() {
   };
 
   this.isLegal = (start, end) => {
+    // isValidInput function? : Is a two digit number (start and end numbers to sting method and then .length === 2)
+    
     // figure out how to call an array inide of an array and determine if start has a piece and end is empty.
     // if checker = black : start[0] needs to be 1 less than end[0] && start[1] needs to be either +1 || -1 of end[1]
     // if checker = white : start[0] needs to be 1 more than end[0] && start[1] needs to be either +1 || -1 of end[1]

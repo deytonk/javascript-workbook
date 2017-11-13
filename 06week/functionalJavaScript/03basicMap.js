@@ -1,3 +1,5 @@
+'use strict';
+
 // Convert the following code from a for-loop to Array#map:
 
 // function doubleAll(numbers) {
@@ -8,15 +10,17 @@
 //       return result
 //     }
 
-
 const doubleAll = (numbers) => {
-  let result = [];
-  numbers.map(function(i) {
-    result.push(i * 2);
-  });
+  // let result = [];
+  // numbers.map(i => result.push(i * 2));
 
-  return result;
+  return numbers.map(i => i * 2);
+
+  // return result;
 
 }
 
 module.exports = doubleAll
+
+
+// module.exports = numbers => numbers.map(i => i * 2);

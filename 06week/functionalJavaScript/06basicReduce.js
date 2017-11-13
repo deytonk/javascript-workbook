@@ -1,21 +1,16 @@
-// Use Array#filter to write a function called getShortMessages.
-//
-// getShortMessages takes an array of objects with '.message' properties and returns an array of messages
-// that are less than < 50 characters long.
-//
-// The function should return an array containing the messages themselves, without their containing object.
+'use strict';
 
-function getShortMessages(messages) {
+// Given an Array of strings, use Array#reduce to create an object that contains the number of times each string occured in the array.
+// Return the object directly (no need to console.log).
 
-  let shortMessage = messages.filter(function(shorten) {
-    if (shorten.message.length < 50) {
-  		return true;
-  	}
-  });
-
-  return shortMessage.map(function(shorten) {
-    return shorten.message;
-  })
+const countWords = (inputWords) => {
+  // let obj = {};
+  inputWords.reduce((acc, i) => {
+    if (!acc[i]) {
+    acc[i] = 0;
+    acc[i]++;
+    return acc;
+  } , {}});
 }
 
-module.exports = getShortMessages
+module.exports = countWords

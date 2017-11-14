@@ -10,7 +10,7 @@ const rl = readline.createInterface({
 
 function pigLatin(word) {
 
-  // Your code here - making sure I made my branch correctly, attempt 2 https://github.com/deytonk/javascript-workbook/pull/5
+  //making sure I made my branch correctly, attempt 2 https://github.com/deytonk/javascript-workbook/pull/5
 
   // WHITE BOARDING:
   // Find position of first vowel (a,e,i,o,u, or y)
@@ -27,13 +27,13 @@ function pigLatin(word) {
   }
 
   return word + "yay";
-  
+
 }
 
 
 function getPrompt() {
   rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
+    console.log(pigLatin(answer));
     getPrompt();
   });
 }

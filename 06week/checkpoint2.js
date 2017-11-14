@@ -78,5 +78,5 @@ const userArray = [{
 
 const statement = userArray.map((customerObj) => {
   let buyer = customerObj.customer;
-  console.log(buyer.customerName + ' paid ' + buyer.productPrice + ' for ' + buyer.product + ' in ' + buyer.customerCity + ',' + buyer.customerState);
+  console.log(buyer.customerName + ' paid $' + buyer.productPrice + ' for ' + buyer.product + ' in ' + buyer.customerCity + ',' + buyer.customerState);
 });

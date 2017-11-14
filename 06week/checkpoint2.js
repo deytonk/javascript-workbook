@@ -75,3 +75,7 @@ const userArray = [{
 //   return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
 // });
 // console.log(statement);
+
+const statement = userArray.map((customerObj) => { 
+  console.log(customerObj.customer.customerName + ' paid ' + customerObj.customer.productPrice + ' for ' + customerObj.customer.product + ' in ' + customerObj.customer.customerCity ',' customerObj.customer.customerState);
+});

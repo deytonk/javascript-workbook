@@ -48,10 +48,30 @@ const userArray = [{
 ];
 
 // this was class progress and I was close!
-const statement = userArray.map(function() {
-  return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
-});
+// const statement = userArray.map(function() {
+//   return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
+// });
+//
+// console.log(statement);
 
 
+// These are my aweful attempts at trying to access the objects in the array:
+// const arrObj = (arr, obj) => {
+//   arr.forEach(function(item, index, array) {
+//   console.log(Object.keys(arr));
+//   });
+// };
 
-console.log(statement);
+// arrObj(userArray);
+
+// userArray.forEach(function(item) {
+//   item = 0; item < userArray.length; item++;
+//   return userArray[item];
+// });
+
+// console.log(obj);
+
+// const statement = userArray.map(function() {
+//   return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
+// });
+// console.log(statement);

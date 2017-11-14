@@ -47,6 +47,7 @@ const userArray = [{
   },
 ];
 
+// this was class progress and I was close!
 const statement = userArray.map(function() {
   return `${userArray.customerName} paid ${userArray.productPrice} for ${userArray.product} in ${userArray.customerCity},${userArray.customerstate}.`
 });

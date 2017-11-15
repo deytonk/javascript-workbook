@@ -1,3 +1,5 @@
+https://github.com/deytonk/javascript-workbook/pull/16
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -18,7 +20,7 @@ class App extends Component {
     const count = this.state.count;
     this.setState({count: this.state.count ++})
   }
-  handleInputChang = (e) => {
+  handleInputChange = (e) => {
     this.setState({inputValue: e.target.value})
   }
   handleItemSubmit = () => {
@@ -28,7 +30,7 @@ class App extends Component {
     // this.setState({list: [...this.state.list]})
   }
   renderList(){
-    return this.state.list.map((item, index) => {
+    return this.state.list.map((item, key) => {
       return <p key={key}>{item}</p>
     })
   }

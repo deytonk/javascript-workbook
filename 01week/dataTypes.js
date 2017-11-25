@@ -76,6 +76,7 @@ function day_time() {
   console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
 }
 
+<<<<<<< HEAD
 day_time ();
 
 function convertNumber() {
@@ -109,53 +110,60 @@ console.log(typeof object1);
 
 var object2 = 7;
 console.log(typeof object2);
+=======
+// var number = 72468;
+// number.toString();
+
+const numberToString = (x) => {
+  x.toString();
+}
+
+// var string = "72468"
+// parseInt(string);
+
+const stringToNumber = (x) => {
+  return parseInt(x);
+}
+
+// this does not work because no matter what you write in the prompt the computer reads it as a string
+// var object = prompt("Write an example of a datatype");
+// document.write(typeof object);
+
+const whatKindOfDataType = (x) => {
+  document.write(typeof x);
+}
+>>>>>>> 5bd60ebe9c867cc26fca388446688ad54f6ded84
 
 // homework
 
 // I did not even try prompt but I am assuming it wont work because it will return a string
-// BUT if you parse the prompt it works!!!
-var firstNum = parseInt(prompt("Write a number"));
-var secondNum = parseInt(prompt("Write another number"));
-console.log("The sum of your two numbers is " + (firstNum + secondNum));
+const sum = (firstNum, secondNum) => {
+  document.write(firstNum + secondNum);
+};
 
-// Renee wanted the program that adds two numbers in a function
-var a;
-var b;
+var thing1 = true;
+var thing2 = true;
 
-function add(a, b) {
-  return a + b;
-}
-console.log(add(10, 5));
-
-// will run if both things are true
-function willItRun(thing1, thing2) {
-  if (thing1 === true && thing2 === true) {
-    return "Yes it will run!";
+function willItRun (thing1, thing2) {
+  if (thing1 && thing2) {
+    return "both are true";
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
+};
 
-console.log(willItRun(true, true));
-
-// will run if at least one thing is true
-function howAboutNow(thing1, thing2) {
-  if (thing1 === true || thing2 === true) {
-    return "Yes it will run!";
+function howAboutNow (thing1, thing2) {
+  if (thing1 || thing2) {
+    return "one is true";
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
+};
 
-console.log(howAboutNow(true, false));
-
-// will run if both things are false
-function lastOne(thing1, thing2) {
-  if (thing1 === false && thing2 === false) {
-    return "Yes it will run!";
+function lastOne (thing1, thing2) {
+  if (!thing1 || !thing2) {
+    return "both are false"
   } else {
-    return "Sorry, your function is broken.";
+    return false;
   }
-}
-
-console.log(lastOne(false, false));
+};

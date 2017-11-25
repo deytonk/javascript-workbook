@@ -76,7 +76,7 @@ function day_time() {
   console.log(weekday[today.getDay()] + " " + hour + ":" + min + ":" + sec);
 }
 
-<<<<<<< HEAD
+
 day_time ();
 
 function convertNumber() {
@@ -110,7 +110,7 @@ console.log(typeof object1);
 
 var object2 = 7;
 console.log(typeof object2);
-=======
+
 // var number = 72468;
 // number.toString();
 

@@ -3,18 +3,40 @@ import logo from './logo.svg';
 import './App.css';
 
 class Square extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
+  /*state = {
+   new way to write that ^
+  }*/
+
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
+      <button className="square" onClick = {() => this.setState({value: 'X'})}>
+        {this.state.value}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  /*state = {
+    new way to write that ^
+  }*/
+
   renderSquare(i) {
-    return <Square />;
+    return <Square  value={i}/>;
   }
 
   render() {
@@ -44,6 +66,17 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  /*state = {
+    new way to write that ^
+  }*/
+
   render() {
     return (
       <div className="game">

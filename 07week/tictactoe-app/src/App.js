@@ -43,6 +43,7 @@ class Board extends React.Component {
     this.state = {
       squares: Array(9).fill(null),
       nextPlayer: true,
+      moveCount: 0,
     };
   }
 
@@ -57,8 +58,10 @@ class Board extends React.Component {
       return;
     }
     squares[i] = this.state.nextPlayer ? 'X' : 'O';
+    this.setState.moveCount++;
     this.setState({
       squares: squares,
+      // moveCount: this.state.moveCount++,
       nextPlayer: !this.state.nextPlayer,
     });
   }
@@ -74,9 +77,13 @@ class Board extends React.Component {
   }
 
   render() {
+    console.log(this.state.moveCount);
     const winner = checkForWin(this.state.squares);
+    const tie = (this.state.moveCount === 9);
     let status;
-    if (winner) {
+    if (tie) {
+      status = 'It is a tie!';
+    } else if (winner) {
       status = winner + ' is the winner!';
     } else {
       status = 'Next player: ' + (this.state.nextPlayer ? 'X' : 'O');

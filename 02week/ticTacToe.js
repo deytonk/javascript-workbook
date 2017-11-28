@@ -13,7 +13,7 @@ let board = [
   [' ', ' ', ' ']
 ];
 
-let playerTurn = 'O';
+let playerTurn = 'X';
 let moveCount = 0;
 
 function printBoard() {
@@ -74,7 +74,7 @@ function diagonalWin() {
 
 
 
-function checkForWin() {
+const checkForWin = () => {
   // Your code here
   // if in any of the above combinations, there are either all x's or all o's then the respective player wins
   // on each click, if horizontalWin or verticalWin or diagonalWin - gameover and ${} player wins. If no win, then alternate player.
@@ -94,22 +94,23 @@ function checkForWin() {
 
   if (moveCount === 9) {
     console.log("It's a tie!");
-    return true;
+    printBoard();
     // reset();
   } else if (horizontalWin() || verticalWin() || diagonalWin()) {
     console.log(`Player ${playerTurn} Wins!`)
-    return true;
+    printBoard();
     // reset();
-  } else {
-    return false;
   }
 }
 
-function ticTacToe(row, column) {
+const ticTacToe = (row, column) => {
   // the playerturn will start at x but will alternate between xs and os onclicks, and for each click it will checkForWin.
     // if win, game winner will be announced and board will reset.
   // call printBoard after every turn (push playerTurn to array)
+
   checkForWin();
+
+
   // if ((row === 0 || 1 || 2) && (column === 0 || 1 || 2)) {
 
   // } else {
@@ -125,7 +126,8 @@ function ticTacToe(row, column) {
   // }
 
   if (board[row][column] === ' ') {
-    board[row].splice(column, 1, playerTurn);
+    board[row][column] = playerTurn;
+    // board[row].splice(column, 1, playerTurn);
   }
 
 
@@ -155,13 +157,13 @@ function ticTacToe(row, column) {
   // } else {
   //   console.log('Please enter a valid index.  Valid values are 0, 1, 2');
   // }
+  moveCount++;
+
   if (playerTurn === 'X') {
     playerTurn = 'O';
   } else {
     playerTurn = 'X';
   }
-  moveCount++;
-
 }
 
 function getPrompt() {

@@ -1,15 +1,12 @@
 // https://github.com/deytonk/javascript-workbook/pull/17?
 
-
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TowersButton from './TowersButton';
 
 class App extends Component {
-  component(props) {
-  super (props)
-  this.state = {
+  state = {
     stacks: {
       a: [4, 3, 2, 1],
       b: [],
@@ -25,17 +22,21 @@ class App extends Component {
     // endStack:
   }
 
-  isLegalMove(endStack) {
-    const endValue = this.state.stacks[endStack][this.state.stacks[endStack].length]
-    const startValue = this.state.stacks[this.state.startStack][this.state.st]
-    if(!endValue) {
-      return true
-    } else if () {
+  isLegalMove(startStack, endStack) {
+    const endValue = this.state.stacks[endStack][this.state.stacks[endStack].length];
+    const startValue = this.state.stacks[this.state.startStack][this.state.stacks[startStack].length];
+    if(!startValue) {
+      return "This stack is empty! Try again.";
+    } else if(!endValue) {
+      return true;
+    } else if (endValue > startValue) {
+      return "Illegal move! Try again.";
     }
   }
 
-  handleStackClick(stack) {
-    console.log(startStack);
+  handleStackClick(startStack, endStack) {
+    const endValue = this.state.stacks[endStack][this.state.stacks[endStack].length];
+    const startValue = this.state.stacks[this.state.startStack][this.state.stacks[startStack].length];
     if(!this.state.startStack) {
       this.setState({startStack}) /* = startStack: startStack*/
     } else if (endValue > startValue) {
@@ -48,7 +49,7 @@ class App extends Component {
     return Object.keys(this.state.stacks).map((stack) => {
       <div>
         <div style = {{display: 'flex', width: 60, height: 300, alignItems: 'flex-end'}}
-        key={key}
+        // key = {key}
         onClick = {() => this.handleStackClick(stack)}
         >
         <div style = {{display: 'flex', flexDirection: 'column-reverse'}}>

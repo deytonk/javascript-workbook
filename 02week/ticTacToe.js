@@ -106,20 +106,12 @@ function checkForWin() {
 }
 
 function ticTacToe(row, column) {
-  // Your code here
   // the playerturn will start at x but will alternate between xs and os onclicks, and for each click it will checkForWin.
     // if win, game winner will be announced and board will reset.
   // call printBoard after every turn (push playerTurn to array)
-
-  // if ((row === 0 || 1 || 2) && (column === 0 || 1 || 2)) {
   checkForWin();
-  // if (checkForWin() === false){
-  if (playerTurn === 'X') {
-    playerTurn = 'O';
-  } else {
-    playerTurn = 'X';
-  }
-  moveCount++;
+  // if ((row === 0 || 1 || 2) && (column === 0 || 1 || 2)) {
+
   // } else {
   //   console.log("Invalid move, please try again!")
   // }
@@ -135,7 +127,6 @@ function ticTacToe(row, column) {
   if (board[row][column] === ' ') {
     board[row].splice(column, 1, playerTurn);
   }
-
 
 
   // const validValue = (myIndex) => {
@@ -164,6 +155,12 @@ function ticTacToe(row, column) {
   // } else {
   //   console.log('Please enter a valid index.  Valid values are 0, 1, 2');
   // }
+  if (playerTurn === 'X') {
+    playerTurn = 'O';
+  } else {
+    playerTurn = 'X';
+  }
+  moveCount++;
 
 }
 

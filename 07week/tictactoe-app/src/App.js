@@ -27,6 +27,7 @@ import './App.css';
 //   }
 // }
 
+// The tutorial took the Square class ^ and just made it a function:
 const Square = (props) => {
   return (
     <button className="square" onClick={props.onClick}>
@@ -50,7 +51,7 @@ class Board extends React.Component {
   }*/
 
   handleClick(i) {
-    // (slice to copy the squares array instead of mutating the existing array)
+    // (slice to copy the squares array instead of mutating the existing array IMMUTABILITY* (shouldComponentUpdate()))
     const squares = this.state.squares.slice();
     if (checkForWin(squares) || squares[i]) {
       return;
@@ -134,7 +135,7 @@ class Game extends React.Component {
 }
 
 
-  // Either figure how the f this shit works or rewrite it in a way that I understand 
+  // Either figure how the f this shit works or rewrite it in a way that I understand
   const checkForWin = (squares) => {
     const lines = [
       [0, 1, 2],

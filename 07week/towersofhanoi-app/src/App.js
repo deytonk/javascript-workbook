@@ -19,7 +19,7 @@ class App extends Component {
       1: 'green'
     },
     startStack: null,
-    // endStack:
+    endStack: null
   }
 
   isLegalMove(startStack, endStack) {
@@ -63,7 +63,6 @@ class App extends Component {
   render() {
     return (
       <div>
-
       </div>
     );
   }

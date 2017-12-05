@@ -5,6 +5,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+
+import RaisedButton from 'material-ui/RaisedButton';
+
+import Services from './Services'
 import Austin from './Austin';
 import Dallas from './Dallas';
 import NewOrleans from './NewOrleans';
@@ -15,15 +19,16 @@ class Menu extends Component {
     return (
       <Router>
         <div>
-          <ul>
-            <li><Link to="/">Austin & San Antonio Rates</Link></li>
-            <li><Link to="/Dallas.js">Dallas & Fort Worth Rates</Link></li>
-            <li><Link to="/NewOrleans.js">New Orleans & Baton Rouge Rates</Link></li>
-          </ul>
+
+          <h3><Link to="/"><RaisedButton label="Services" primary={true} /></Link></h3>
+          <h4><Link to="/Austin.js"><RaisedButton label="Austin & San Antonio Rates" primary={true} /></Link></h4>
+          <h4><Link to="/Dallas.js"><RaisedButton label="Dallas & Fort Worth Rates" primary={true} /></Link></h4>
+          <h4><Link to="/NewOrleans.js"><RaisedButton label="New Orleans & Baton Rouge Rates" primary={true} /></Link></h4>
 
           <hr/>
 
-          <Route exact path="/" component={Austin}/>
+          <Route exact path="/" component={Services}/>
+          <Route exact path="/Austin.js" component={Austin}/>
           <Route path="/Dallas.js" component={Dallas}/>
           <Route path="/NewOrleans.js" component={NewOrleans}/>
         </div>

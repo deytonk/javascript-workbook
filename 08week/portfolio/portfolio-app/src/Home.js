@@ -1,29 +1,8 @@
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import './App.css';
-import ReactDOM from 'react-dom';
-import { Router, Route, Switch } from 'react-router-dom'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
-import AppBar from 'material-ui/AppBar';
-import Popover from 'material-ui/Popover/Popover';
-import Paper from 'material-ui/Paper';
-import FontIcon from 'material-ui/FontIcon';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
-
-import
-injectTapEventPlugin();
-
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
-
-class App extends Component {
+class Home extends Component {
   state = {
     selectedIndex: 0,
   }
@@ -76,4 +55,4 @@ class App extends Component {
 }
 
 
-export default App;
+export default Home;

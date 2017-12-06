@@ -14,7 +14,15 @@ class NewOrleans extends Component {
     return (
       <div>
         <Paper style={style} zDepth={5}>
+          <img src=""/>
           <h2>New Orleans & Baton Rouge Menu</h2>
+          <div>
+            <h3>DJ Services</h3>
+            <h3>Ultimate Photo Booth</h3>
+            <h3>Photography</h3>
+            <h3>Videography</h3>
+            <h3>Coordination</h3>
+          </div>
         </Paper>
       </div>
     );

@@ -7,12 +7,11 @@ import {
 } from 'react-router-dom'
 
 import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-import Services from './Services'
+import Services from './Services';
 import Austin from './Austin';
 import Dallas from './Dallas';
 import NewOrleans from './NewOrleans';

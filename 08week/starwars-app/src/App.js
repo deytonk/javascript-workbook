@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
-    character: null,
+    characters: null,
   }
   componentDidMount() {
-    const.that = this;
-    fetch('')
+    // const.that = this;
+    fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
       .then((response) => response.json)
-      .then((responseJson) => ) 
-  }
+      .then(storyIds => {
+        storyIds.slice(0, 15).forEach((storyId) => {
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`)
+        .then(res => res.json())
+        .then(characters => {
+          console.log(characters);
+        })
+      });
+    });
+
   renderCharacters() {
     const { characters } = this.state; /*deconstruct this.state.characters*/
     if(characters && characters.length > 0) {
@@ -20,13 +27,10 @@ class App extends Component {
       })
     }
   }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Star Wars</h1>
-        </header>
+      <div>
         {this.renderCharacters()}
       </div>
     );
